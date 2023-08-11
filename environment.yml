@@ -1,0 +1,6 @@
+name: pylsl
+channels:
+  - conda-forge
+dependencies:
+  - python=3.9
+  - liblsl
