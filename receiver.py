@@ -1,14 +1,13 @@
 """Example program to show how to read a multi-channel time series from LSL."""
 
-from pylsl import StreamInlet, resolve_stream
+from pylsl import StreamInlet, resolve_byprop
 
-# first resolve an EEG stream on the lab network
-print("looking for an EEG stream...")
-#streams = resolve_stream('type', 'Markers')
-#streams = resolve_stream('name', 'GregSender')
-streams = resolve_stream('name', 'Unity.Pose')
+print("looking for a stream...")
+streams = resolve_byprop("type", "EEG", timeout=5.0)
+#streams = resolve_byprop("type", "LSL_Marker_Strings", timeout=5.0)
 
 # create a new inlet to read from the stream
+print("found", streams.count(0), "streams")
 inlet = StreamInlet(streams[0])
 
 while True:

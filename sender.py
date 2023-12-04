@@ -13,6 +13,7 @@ from pylsl import StreamInfo, StreamOutlet
 # could also omit it but interrupted connections wouldn't auto-recover).
 #info = StreamInfo('GregSender', 'EEG', 3, 10, 'float32')
 info = StreamInfo('Unity.Pose', 'Unity.Transform', 3, 10, 'float32')
+info = StreamInfo('LSL Test', 'LSL_Marker_Strings', 1, channel_format="float32")
 
 # next make an outlet
 outlet = StreamOutlet(info)
@@ -21,7 +22,8 @@ print("now sending data...")
 while True:
     # make a new random 8-channel sample; this is converted into a
     # pylsl.vectorf (the data type that is expected by push_sample)
-    mysample = [random.random(), random.random(), random.random()]
+    #mysample = [random.random(), random.random(), random.random()]
+    mysample = [1.23]
 
     # now send it and wait for a bit
     outlet.push_sample(mysample)

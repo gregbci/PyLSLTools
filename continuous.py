@@ -1,8 +1,9 @@
 import time
 from pylsl import StreamInlet, ContinuousResolver
 
-resolver = ContinuousResolver("name", "Unity.Pose")
-
+#resolver = ContinuousResolver("name", "Unity.Pose")
+resolver = ContinuousResolver("name", "PythonResponse")
+#resolver = ContinuousResolver("name", "MockEEG")
 
 while True:
    time.sleep(2)
@@ -19,6 +20,4 @@ while True:
          print(timestamp, sample)
    else:
       print("no streams")
-
-
 
