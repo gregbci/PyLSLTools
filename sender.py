@@ -12,7 +12,7 @@ from pylsl import StreamInfo, StreamOutlet
 # less locally unique identifier for the stream as far as available (you
 # could also omit it but interrupted connections wouldn't auto-recover).
 #info = StreamInfo('GregSender', 'EEG', 3, 10, 'float32')
-info = StreamInfo('Unity.Pose', 'Unity.Transform', 3, 10, 'float32')
+#info = StreamInfo('Unity.Pose', 'Unity.Transform', 3, 10, 'float32')
 info = StreamInfo('LSL Test', 'LSL_Marker_Strings', 1, channel_format="float32")
 
 # next make an outlet
