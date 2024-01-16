@@ -3,8 +3,8 @@
 from pylsl import StreamInlet, resolve_byprop
 
 print("looking for a stream...")
-streams = resolve_byprop("type", "EEG", timeout=5.0)
-#streams = resolve_byprop("type", "LSL_Marker_Strings", timeout=5.0)
+#streams = resolve_byprop("type", "EEG", timeout=5.0)
+streams = resolve_byprop("type", "LSL_Marker_Strings", timeout=5.0)
 
 # create a new inlet to read from the stream
 print("found", streams.count(0), "streams")
