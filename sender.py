@@ -17,14 +17,13 @@ info = StreamInfo('LSL Test', 'LSL_Marker_Strings', 1, channel_format="float32")
 
 # next make an outlet
 outlet = StreamOutlet(info)
+count = 0
 
 print("now sending data...")
 while True:
-    # make a new random 8-channel sample; this is converted into a
-    # pylsl.vectorf (the data type that is expected by push_sample)
-    #mysample = [random.random(), random.random(), random.random()]
-    mysample = [1.23]
+    mysample = [count]
+    count += 1
 
     # now send it and wait for a bit
     outlet.push_sample(mysample)
-    time.sleep(0.1)
+    time.sleep(1)
